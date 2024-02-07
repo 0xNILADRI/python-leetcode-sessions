@@ -30,19 +30,7 @@ class MyLinkedList:
         prev.next = node
         next.prev = node
         node.next = next
-        node.prev = xt
-        if curr and curr != self.right and index == 0:
-            next, prev = curr.next, curr.prev
-            prev.next = next
-            next.prev = prev
-
-    # Your MyLinkedList object will be instantiated and called as such:
-    # obj = MyLinkedList()
-    # param_1 = obj.get(index)
-    # obj.addAtHead(val)
-    # obj.addAtTail(val)
-    # obj.addAtIndex(index,val)
-    # obj.deleteAtIndex(index) prev
+        node.prev = prev
 
     def addAtTail(self, val: int) -> None:
         node, next, prev = ListNode(val), self.right, self.right.prev
@@ -67,4 +55,17 @@ class MyLinkedList:
         curr = self.left.next
         while index > 0 and curr:
             index -= 1
-            curr = curr.ne
+            curr = curr.next
+        if curr and curr != self.right and index == 0:
+            next, prev = curr.next, curr.prev
+            prev.next = next
+            next.prev = prev
+
+
+# Your MyLinkedList object will be instantiated and called as such:
+# obj = MyLinkedList()
+# param_1 = obj.get(index)
+# obj.addAtHead(val)
+# obj.addAtTail(val)
+# obj.addAtIndex(index,val)
+# obj.deleteAtIndex(index)
