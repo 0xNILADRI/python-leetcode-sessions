@@ -4,13 +4,13 @@ def binarySearch(arr, key):
 
     while(left <= right):
         mid = (left + right) // 2
-        if key < mid:
-            right  = mid - 1
-        elif key > mid:
+        if key == arr[mid]:
+            return mid
+        elif key > arr[mid]:
             left = mid + 1
         else:
-            return mid
+            right  = mid - 1
     return -1
 
-arr = [1,2,3,4,5,6,7,8]
-print(binarySearch(arr,2))
+arr = [-1,0,3,5,9,12]
+print(binarySearch(arr,9))
