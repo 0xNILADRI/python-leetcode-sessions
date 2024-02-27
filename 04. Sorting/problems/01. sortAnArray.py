@@ -16,7 +16,7 @@ class Solution:
         left = self.sortArray(left)
         right = self.sortArray(right)
 
-        return merge(left, right)
+        return self.merge(left, right)
     
     def merge(left, right):
         result = []
